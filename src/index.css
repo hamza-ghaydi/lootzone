@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* ROOT VARIABLES — automatically updated by ThemeProvider */
+:root {
+  color-scheme: dark;
+
+/* BACKGROUNDS */
+  --bg-900: #0e0f10;
+  --bg-800: #111111;
+  --bg-700: #171717;
+
+  /* TEXT */
+  --gold-500: #f1c873;
+  --gold-600: #dda545;
+  --green-neon: #a8ff60;
+
+  --text-primary: #ffffff;
+  --text-secondary: #cfcfcf;
+
+   /* BRAND */
+  --brand: #d08700;
+  --brand-soft: rgba(208, 135, 0, 0.12);
+
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+
+  background: radial-gradient(circle at 20% 20%, #1a1b1d, #0b0c0d 35%),
+              radial-gradient(circle at 80% 10%, #141517, #0b0c0d 30%),
+              #0b0c0d;
+  color: var(--text-primary);
+}
+
+/* BODY */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg-900);
+  color: var(--text-primary);
+}
+
+
+
+/* SHINE HOVER */
+.shine-hover {
+  position: relative;
+  overflow: hidden;
+}
+.shine-hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 40%,
+    rgba(255, 255, 255, 0.2) 60%,
+    transparent 100%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+.shine-hover:hover::after {
+  transform: translateX(120%);
+}
+
+/* GLITCH TEXT */
+.glitch {
+  position: relative;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  color: var(--gold-500);
+  background: transparent;
+  clip: rect(0, 900px, 0, 0);
+}
+.glitch::before {
+  animation: glitchTop 2s infinite linear;
+}
+.glitch::after {
+  animation: glitchBottom 2.5s infinite linear;
+}
+
+/* GLITCH ANIMATIONS */
+@keyframes glitchTop {
+  0%   { clip: rect(0,900px,0,0); transform: translate(-2px,-2px); }
+  20%  { clip: rect(0,900px,80px,0); transform: translate(2px,2px); }
+  40%  { clip: rect(0,900px,0,0); transform: translate(0,0); }
+  60%  { clip: rect(0,900px,60px,0); transform: translate(-3px,1px); }
+  80%  { clip: rect(0,900px,0,0); transform: translate(1px,-1px); }
+  100% { clip: rect(0,900px,70px,0); transform: translate(0,0); }
+}
+@keyframes glitchBottom {
+  0%   { clip: rect(0,900px,0,0); transform: translate(2px,2px); }
+  20%  { clip: rect(20px,900px,90px,0); transform: translate(-1px,-1px); }
+  40%  { clip: rect(0,900px,0,0); transform: translate(0,0); }
+  60%  { clip: rect(10px,900px,80px,0); transform: translate(2px,-2px); }
+  80%  { clip: rect(0,900px,0,0); transform: translate(-2px,2px); }
+  100% { clip: rect(15px,900px,70px,0); transform: translate(0,0); }
+}
+
+/* UTILITIES */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+.fade-border {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+.animate-fade-in {
+  animation: fadeInUp 0.4s ease;
+}
+
+/* Fade animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
