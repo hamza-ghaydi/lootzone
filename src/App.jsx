@@ -9,6 +9,7 @@ import Contact from './pages/Contact.jsx';
 import NotFound from './pages/NotFound.jsx';
 import Checkout from './pages/Checkout.jsx';
 import ThankYou from './pages/ThankYou.jsx';
+import ScrollToTop from './components/ScrollToTop.jsx';
 
 const PageWrapper = ({ children }) => {
   const location = useLocation();
@@ -24,6 +25,7 @@ const PageWrapper = ({ children }) => {
 
 const App = () => (
   <div className=" bg-[#0b0c0d] text-white">
+    <ScrollToTop />
     <Navbar />
     <main className="mx-auto min-h-[80vh] max-w-6xl px-4">
       <PageWrapper>
