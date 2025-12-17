@@ -18,7 +18,7 @@ const GameCard = ({ game }) => {
   return (
     <Link
       to={`/game/${game.id}`}
-      className="shine-hover group relative flex min-w-[220px] max-w-[260px] flex-col overflow-hidden rounded-2xl bg-[#111111] transition duration-300 hover:-translate-y-1 "
+      className="shine-hover group relative flex min-w-[220px] max-w-auto  flex-col overflow-hidden rounded-2xl bg-[#111111] transition duration-300 hover:-translate-y-1 "
     >
       <div className="relative h-40 w-full overflow-hidden">
         <img

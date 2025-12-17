@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const tabs = ['Description' , 'Reviews'];
+const tabs = ['Description' , ];
 
 const GameTabs = ({ description, requirements, reviews }) => {
   const [active, setActive] = useState('Description');

@@ -62,7 +62,7 @@ const Home = () => {
 
   return (
     <div className="space-y-10">
-      <section className="relative h-[55vh] flex items-center justify-center overflow-hidden rounded-3xl bg-linear-to-br from-[#0d0f14] via-[#0b0c0d] to-yellow-700 p-6 shadow-2xl">
+      <section className="relative lg:h-[55vh] h- flex items-center justify-center overflow-hidden rounded-3xl bg-linear-to-br from-[#0d0f14] via-[#0b0c0d] to-yellow-700 p-6 shadow-2xl">
         <div className="absolute inset-0 opacity-60 transition duration-700">
           <img
             src={
@@ -115,7 +115,7 @@ const Home = () => {
           
         </div>
         {heroSlides.length > 1 && (
-          <div className="absolute bottom-4 left-0 right-0 z-10 flex items-center justify-center px-4">
+          <div className="absolute hidden bottom-4 left-0 right-0 z-10 lg:flex items-center justify-center px-4">
             
             <div className="flex items-center gap-2 rounded-full bg-black/30 px-3 py-2 backdrop-blur">
               {heroSlides.map((slide, idx) => (

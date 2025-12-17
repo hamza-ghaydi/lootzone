@@ -27,7 +27,7 @@ const App = () => (
   <div className=" bg-[#0b0c0d] text-white">
     <ScrollToTop />
     <Navbar />
-    <main className="mx-auto min-h-[80vh] max-w-6xl px-4">
+    <main className="mx-auto lg:min-h-[80vh] max-w-6xl lg:px-4 px-2">
       <PageWrapper>
         <Routes>
           <Route path="/" element={<Home />} />

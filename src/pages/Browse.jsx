@@ -23,7 +23,7 @@ const Browse = () => {
       : 'Browse games';
 
   return (
-    <div className="space-y-6 mt-5">
+    <div className="space-y-6 mt-5 w-full">
       <SectionTitle title={title} subtitle="Discover games" />
 
       {error && (

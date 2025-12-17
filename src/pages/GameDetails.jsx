@@ -12,11 +12,9 @@ import {
 import ScreenshotGallery from '../components/ScreenshotGallery.jsx';
 import PriceBox from '../components/PriceBox.jsx';
 import Requirements from '../components/Requirements.jsx';
-import Bundles from '../components/Bundles.jsx';
 import GameTabs from '../components/GameTabs.jsx';
 import { useGames } from '../context/GameContext.jsx';
 import { formatDate, formatRating } from '../utils/format.js';
-import Reviews from '../components/Reviews.jsx';
 
 const Tag = ({ icon: Icon, label }) => (
   <span className="flex items-center gap-2 rounded-full bg-[#111111]/80 px-3 py-1 text-xs font-semibold text-[#cfcfcf]">
@@ -67,7 +65,7 @@ const GameDetails = () => {
 
   return (
     <div className="space-y-10">
-      <section className="relative h-[40vh] overflow-hidden rounded-2xl ">
+      <section className="relative  overflow-hidden rounded-2xl ">
         <div className="absolute inset-0">
           <img
             src={
@@ -128,14 +126,12 @@ const GameDetails = () => {
         </div>
       </section>
 
-      <div className="grid gap-6 lg:grid-cols-[2fr_1fr]">
-        <div className="space-y-6">
+      <div className="lg:grid space-y-5 gap-6 lg:grid-cols-[2fr_1fr]">
+        <div className="space-y-6 ">
           <ScreenshotGallery screenshots={shots} />
           <GameTabs
             description={game?.description_raw?.slice(0, 650) || game?.description_raw}
-            // reviews={<Reviews />}
           />
-          <Bundles />
           <Requirements />
 
         </div>

@@ -11,7 +11,7 @@ const NotFound = () => (
     </p>
     <Link
       to="/"
-      className="rounded-full bg-gradient-to-r from-[#f1c873] to-[#dda545] px-6 py-3 font-semibold text-black transition hover:shadow-[0_10px_40px_rgba(241,200,115,0.3)]"
+      className="rounded-full bg-gradient-to-r from-yellow-600 to-yellow-900 px-6 py-3 font-semibold text-white transition hover:shadow-[0_10px_40px_rgba(241,200,115,0.3)]"
     >
       Back to home
     </Link>

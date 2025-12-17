@@ -78,9 +78,9 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed space-y-3 py-3 inset-x-0 top-0 z-30 border-b border-white/5 bg-[#0b0c0d]/80 backdrop-blur-xl">
+    <header className="fixed  space-y-3 py-3 inset-x-0 top-0 z-30 border-b border-white/5 bg-[#0b0c0d]/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 ">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center lg:w-auto w-65 justify-between">
           <button
             type="button"
             className="flex h-10 w-10 items-center justify-center rounded-full bg-[#111111] lg:hidden"
@@ -112,38 +112,39 @@ const Navbar = () => {
               {link.label}
             </NavLink>
           ))}
-        </nav>
-        {/* Category Dropdown */}
-        <div >
-          <div className="relative">
-            <button
-              type="button"
-              onClick={() => setShowCategories(!showCategories)}
-              onBlur={() => setTimeout(() => setShowCategories(false), 150)}
-              className="flex items-center gap-2 rounded-full bg-[#111111] px-6 py-2 text-sm font-semibold text-[#cfcfcf] transition hover:bg-yellow-600/10 hover:text-yellow-600 hover:border hover:border-yellow-600/20"
-            >
-              Browse by Category
-              <ChevronDown className={`h-4 w-4 transition-transform ${showCategories ? 'rotate-180' : ''}`} />
-            </button>
+          {/* Category Dropdown */}
+          <div >
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setShowCategories(!showCategories)}
+                onBlur={() => setTimeout(() => setShowCategories(false), 150)}
+                className="flex items-center gap-2 rounded-full bg-[#111111] px-6 py-2 text-sm font-semibold text-[#cfcfcf] transition hover:bg-yellow-600/10 hover:text-yellow-600 hover:border hover:border-yellow-600/20"
+              >
+                Browse by Category
+                <ChevronDown className={`h-4 w-4 transition-transform ${showCategories ? 'rotate-180' : ''}`} />
+              </button>
 
-            {showCategories && (
-              <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 w-64 overflow-hidden rounded-2xl border border-[#1f1f1f] bg-[#0f1012] shadow-xl z-50">
-                <div className="divide-y divide-[#1f1f1f]">
-                  {categories.map((cat) => (
-                    <button
-                      key={cat}
-                      type="button"
-                      onMouseDown={() => handleCategorySelect(cat)}
-                      className="w-full px-4 py-3 text-left text-sm font-semibold text-[#cfcfcf] transition hover:bg-yellow-600/10 hover:text-yellow-600"
-                    >
-                      {cat}
-                    </button>
-                  ))}
+              {showCategories && (
+                <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 w-64 overflow-hidden rounded-2xl border border-[#1f1f1f] bg-[#0f1012] shadow-xl z-50">
+                  <div className="divide-y divide-[#1f1f1f]">
+                    {categories.map((cat) => (
+                      <button
+                        key={cat}
+                        type="button"
+                        onMouseDown={() => handleCategorySelect(cat)}
+                        className="w-full px-4 py-3 text-left text-sm font-semibold text-[#cfcfcf] transition hover:bg-yellow-600/10 hover:text-yellow-600"
+                      >
+                        {cat}
+                      </button>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
-        </div>
+        </nav>
+
         <div className="hidden flex-1 lg:flex">
           <div className="relative w-full">
             <form

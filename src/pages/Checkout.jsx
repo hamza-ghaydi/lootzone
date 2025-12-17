@@ -19,7 +19,7 @@ const Checkout = () => {
   };
 
   return (
-    <div className="space-y-6 mt-5 rounded-3xl border border-[#1f1f1f] bg-[#0f1012] p-6 text-white shadow-xl">
+    <div className="space-y-6 lg:mt-5 rounded-3xl border border-[#1f1f1f] bg-[#0f1012] p-6 text-white shadow-xl">
       <div className="flex items-center justify-between">
         <div>
           <p className="text-sm uppercase tracking-[0.2em] text-yellow-600">Checkout</p>
@@ -33,7 +33,7 @@ const Checkout = () => {
           <p className="text-lg font-semibold">Your cart is empty.</p>
           <p className="mt-2 text-[#cfcfcf]">Browse games and add them to your cart.</p>
           <Link
-            to="/browse"
+            to="/"
             className="mt-4 inline-block rounded-full bg-yellow-600 px-6 py-3 font-semibold text-black transition hover:bg-yellow-500"
           >
             Continue shopping
